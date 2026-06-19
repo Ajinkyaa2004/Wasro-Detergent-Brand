@@ -1,26 +1,384 @@
 @import "tailwindcss";
 
+@theme {
+  --color-wasro-blue: #1b5fa8;
+  --color-wasro-blue-dark: #0f4275;
+  --color-wasro-blue-light: #d6e8f5;
+  --color-wasro-cream: #faf7f2;
+  --color-wasro-cream-dark: #f0ebe0;
+  --color-wasro-yellow: #f4c430;
+  --color-wasro-yellow-dark: #d4a626;
+  --color-wasro-coral: #e85a4f;
+  --color-wasro-charcoal: #1a1a1a;
+  --color-wasro-slate: #5c6470;
+  --color-wasro-border: #e6e0d4;
+
+  --font-display: "General Sans", system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-wasro-cream);
+  --foreground: var(--color-wasro-charcoal);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-wasro-blue);
+  color: white;
+}
+
+@keyframes wasro-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wasro-reveal {
+  opacity: 0;
+  animation: wasro-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wasro-reveal {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Floating WhatsApp pulse ring */
+@keyframes wasro-pulse-ring {
+  0% { transform: scale(1); opacity: 0.65; }
+  80% { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+.wasro-pulse-ring {
+  animation: wasro-pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hero product gentle float */
+@keyframes wasro-float-y {
+  0%, 100% { transform: rotate(2deg) translateY(0); }
+  50% { transform: rotate(2deg) translateY(-10px); }
+}
+.wasro-float {
+  animation: wasro-float-y 5s ease-in-out infinite;
+}
+
+/* CTA button pulse glow.
+   Previously animated `box-shadow` directly — that triggers a full repaint
+   each frame on mobile. Now uses a pseudo-element with composited
+   `transform: scale + opacity`, which the compositor can run on the GPU
+   without touching the main thread. */
+.wasro-cta-pulse {
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 10px 26px -8px rgba(27, 95, 168, 0.45);
+}
+.wasro-cta-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  animation: wasro-cta-ring 2.6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+@keyframes wasro-cta-ring {
+  0%, 100% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.08); opacity: 0.18; }
+}
+
+/* Animated background gradient mesh */
+@keyframes wasro-mesh-shift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(60px, -40px, 0) scale(1.1); }
+  66% { transform: translate3d(-50px, 30px, 0) scale(0.95); }
+}
+.wasro-mesh-blob {
+  animation: wasro-mesh-shift 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Stain Guide cinematic transition + cursor bubble */
+@keyframes wasro-stain-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+.wasro-stain-panel {
+  animation: wasro-stain-arrive 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes wasro-splash {
+  0% {
+    transform: translate(-50%, -50%) scale(0.45) rotate(-8deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.6) rotate(8deg);
+    opacity: 0;
+  }
+}
+.wasro-splash-emoji {
+  animation: wasro-splash 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes wasro-splash-rings {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+.wasro-splash-ring {
+  animation: wasro-splash-rings 0.95s ease-out forwards;
+}
+
+@keyframes wasro-stain-tile-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--stain-accent, transparent); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+.wasro-stain-tile-active {
+  animation: wasro-stain-tile-pulse 2.6s ease-in-out infinite;
+}
+
+/* Free-gift badge pulse — composited transform+opacity instead of
+   box-shadow (which forces full repaint each frame). */
+.wasro-gift-pulse {
+  position: relative;
+  isolation: isolate;
+}
+.wasro-gift-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgba(244, 196, 48, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  animation: wasro-gift-ring 2.4s ease-out infinite;
+  will-change: transform, opacity;
+}
+@keyframes wasro-gift-ring {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+/* Navbar drop-in animation — waits 2s after page load, then slides down */
+@keyframes wasro-navbar-drop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.wasro-navbar-anim {
+  animation: wasro-navbar-drop 0.85s cubic-bezier(0.16, 1, 0.3, 1) 2s both;
+}
+
+/* BubbleField — bubbles floating up.
+   Keyframes defined here ONCE so every <BubbleField /> instance doesn't
+   ship its own `<style>` block. */
+@keyframes wasro-bubble-float {
+  0%   { transform: translate3d(0, 0, 0) scale(0.85); opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translate3d(var(--bubble-drift), -120vh, 0) scale(1.05); opacity: 0; }
+}
+.wasro-bubble {
+  animation-name: wasro-bubble-float;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  will-change: transform, opacity;
+}
+/* On small viewports, halve the bubble count by hiding the "back" group.
+   Cuts mobile paint cost roughly in half without changing desktop. */
+@media (max-width: 640px) {
+  .wasro-bubble[data-half="back"] {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wasro-bubble {
+    animation: none;
+    opacity: 0 !important;
+  }
+}
+
+/* Section wave — slow horizontal flow */
+@keyframes wasro-wave-flow {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.wasro-wave-back {
+  animation: wasro-wave-flow 60s linear infinite;
+  will-change: transform;
+}
+.wasro-wave-front {
+  animation: wasro-wave-flow 42s linear infinite;
+  animation-direction: reverse;
+  will-change: transform;
+}
+
+/* Material-style click ripple */
+@keyframes wasro-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.wasro-ripple {
+  animation: wasro-ripple 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: center;
+}
+
+/* Shine sweep — diagonal light passing across an element */
+@keyframes wasro-shine-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+.wasro-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.wasro-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 62%,
+    transparent 100%
+  );
+  animation: wasro-shine-sweep 5.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.wasro-shine-slow::after {
+  animation-duration: 8s;
+}
+.wasro-shine-cta::after {
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+  animation-duration: 4.5s;
+}
+
+/* Marquee already defined inline; keep here for global availability too */
+@media (prefers-reduced-motion: reduce) {
+  .wasro-pulse-ring,
+  .wasro-float,
+  .wasro-mesh-blob,
+  .wasro-stain-panel,
+  .wasro-splash-emoji,
+  .wasro-splash-ring,
+  .wasro-stain-tile-active,
+  .wasro-shine::after,
+  .wasro-shine-cta::after,
+  .wasro-wave-back,
+  .wasro-wave-front,
+  .wasro-navbar-anim {
+    animation: none;
+  }
+  .wasro-cta-pulse::before,
+  .wasro-gift-pulse::before {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* On small viewports, drop the heavy mesh-blob animation entirely and
+   reduce blur. The blobs are decorative — losing them on mobile makes
+   the page paint far faster without losing brand feel. */
+@media (max-width: 640px) {
+  .wasro-mesh-blob {
+    animation: none;
+  }
+}
+
+/* `content-visibility: auto` lets the browser skip rendering offscreen
+   sections until they scroll into view. Massive paint-budget saving for
+   long landing pages. We opt long stacked sections in via this class. */
+.wasro-cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Section-wave responsive cap.
+   The component sets a desktop height (typically 70px) via inline `style`.
+   On phones that's roughly 1/12 of viewport height — too dominant. Clamp
+   the inline height to a fluid mobile value below the md breakpoint. */
+@media (max-width: 767px) {
+  .wasro-section-wave {
+    height: clamp(32px, 6vw, 56px) !important;
+  }
 }

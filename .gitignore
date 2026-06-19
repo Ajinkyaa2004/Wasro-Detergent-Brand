@@ -33,6 +33,29 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# private credentials reference (Upstash, admin pwd, SMTP, etc.) — never commit
+/_secrets/
+
+# private business documents (signed contract, invoices, debtor PII) — never commit
+/_docs/
+
+# image working folders — sources, AI generations & scratch. The deployable app
+# ships only from /public, so these (~150MB) are kept out of the repo.
+/Creatives/
+/Images/
+/generated_images/
+/new_images/
+
+# stray root-level logo working copies (canonical versions live in /public)
+/logo.png
+/logo1.png
+/logo1-cropped.png
+
+# Selenium suite local artifacts
+/tests/.venv/
+/tests/screenshots/
+/tests/report.html
+
 # vercel
 .vercel
 

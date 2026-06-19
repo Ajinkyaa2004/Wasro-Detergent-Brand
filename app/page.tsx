@@ -1,65 +1,132 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { Hero } from "@/components/sections/hero";
+import { CategoryStrip } from "@/components/sections/category-strip";
+import { FeaturedProducts } from "@/components/sections/featured-products";
+import { PackSizes } from "@/components/sections/pack-sizes";
+import { LifestyleBanner } from "@/components/sections/lifestyle-banner";
+import { DistributorStrip } from "@/components/sections/distributor-strip";
+import { WhyWasro } from "@/components/sections/why-wasro";
+import { StainGuideTeaser } from "@/components/sections/stain-guide-teaser";
+import { BulkCta } from "@/components/sections/bulk-cta";
+import { PressStrip } from "@/components/sections/press-strip";
+import { Reviews } from "@/components/sections/reviews";
+import { SectionWave } from "@/components/ui/section-wave";
+import { SplashScreen } from "@/components/splash/splash-screen";
+import { getFeaturedProducts } from "@/data/products";
+import { getVisibleReviews, aggregate } from "@/lib/reviews";
+import {
+  JsonLd,
+  buildMetadata,
+  productsItemListLd,
+  plantLocalBusinessLd,
+  brandAggregateRatingLd,
+} from "@/lib/seo";
+import { SITE } from "@/lib/utils";
 
-export default function Home() {
+const COLORS = {
+  cream: "#FAF7F2",
+  creamDark: "#F0EBE0",
+  blue: "#1B5FA8",
+  white: "#FFFFFF",
+};
+
+// Hero reads the admin-editable offer at request time — force-dynamic so
+// the latest offer always appears without a redeploy. Cost is ~20-50ms
+// server render vs. static; well worth instant admin updates.
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = buildMetadata({
+  title: `${SITE.brand} — ${SITE.tagline}`,
+  description:
+    "Wasro is an Indian detergent brand by Madhav Industries — manufactured in Assam, trusted at 121+ stores across Northeast India. Detergent powders, dishwash bars, dishwash tubs & clothwash bars, starting at ₹5. Free gift in every family pack.",
+  path: "/",
+  keywords: [
+    "detergent powder online India",
+    "best detergent for hand wash",
+    "Assam detergent brand",
+    "FMCG Northeast India",
+    "Wasro Madhav Industries",
+  ],
+});
+
+export default async function Home() {
+  const featured = getFeaturedProducts();
+  // Load reviews here too so we can emit AggregateRating JSON-LD in
+  // parallel with rendering the section. The actual Reviews component
+  // calls getVisibleReviews() again — same cache hit, ~no extra cost.
+  const reviews = await getVisibleReviews();
+  const agg = aggregate(reviews);
+  const ratingLd = agg
+    ? brandAggregateRatingLd({
+        average: agg.average,
+        count: agg.count,
+        featured: reviews.slice(0, 3).map((r) => ({
+          author: r.name,
+          body: r.body,
+          rating: r.rating,
+          date: r.date,
+        })),
+      })
+    : null;
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      {/* First-visit branded splash. Imported here (not in the root
+          layout) so it tree-shakes from every other route — visitors
+          landing on /products, /find-store, /admin etc never see it. */}
+      <SplashScreen />
+
+      {/* Home-page JSON-LD: featured-product ItemList + the manufacturing
+          plant as a LocalBusiness + (when reviews exist) brand-level
+          AggregateRating. The root layout already emits
+          Organization + WebSite, so we don't repeat those here. */}
+      <JsonLd
+        data={[
+          productsItemListLd(featured),
+          plantLocalBusinessLd(),
+          ...(ratingLd ? [ratingLd] : []),
+        ]}
+      />
+      {/* Above the fold: Hero + first-look sections, render eagerly. */}
+      <Hero />
+      <CategoryStrip />
+      {/* Below the fold: each section opts into `content-visibility:auto`
+          so the browser skips layout/paint until it scrolls near. Halves
+          the home page's initial paint budget on mobile. */}
+      <div className="wasro-cv-auto">
+        <FeaturedProducts />
+      </div>
+      <div className="wasro-cv-auto">
+        <PackSizes />
+      </div>
+      <div className="wasro-cv-auto">
+        <LifestyleBanner />
+      </div>
+      <SectionWave from={COLORS.cream} to={COLORS.blue} />
+      <div className="wasro-cv-auto">
+        <DistributorStrip />
+      </div>
+      <SectionWave from={COLORS.blue} to={COLORS.white} />
+      <div className="wasro-cv-auto">
+        <WhyWasro />
+      </div>
+      <div className="wasro-cv-auto">
+        <StainGuideTeaser />
+      </div>
+      <div className="wasro-cv-auto">
+        <BulkCta />
+      </div>
+      {/* Customer reviews — user-level social proof, sits right before
+          the institutional Press Strip so the page closes with two
+          consecutive trust signals (real households + recognition). */}
+      <div className="wasro-cv-auto">
+        <Reviews />
+      </div>
+      <SectionWave from={COLORS.creamDark} to={COLORS.blue} />
+      {/* Press / 'As Seen In' — last section before the footer. Frames
+          Wasro as an established regional brand to first-time visitors. */}
+      <div className="wasro-cv-auto">
+        <PressStrip />
+      </div>
+    </>
   );
 }
