@@ -23,7 +23,7 @@ export const DEFAULT_FAQS: FaqEntry[] = [
   },
   {
     q: "Are the free gifts really included?",
-    a: "Yes — every family-pack of Wasro detergent powder ships with a real, useful gift. The 400g pack includes a 1L mug; the 500g pack a free ₹5 dishwash bar; the 2kg pack a printed bucket with lid (or a printed tub); the 3kg pack a drum or big tub. Dishwash tubs include a free scrubber.",
+    a: "Yes — every Wasro detergent pack ships with a real, useful gift. The 500g pack comes with a free mug; the 2kg pack with a free bucket or tub; the 3kg pack with a free drum or big tub; and the 4kg jumbo pack with a free 40-litre drum. Dishwash tubs include a free scrubber. Gifts are subject to availability and may vary by region and stock.",
   },
   {
     q: "Do you offer bulk discounts for shops and institutions?",

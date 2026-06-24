@@ -93,7 +93,7 @@ export default function ReturnsPage() {
 
         <h2 className="mt-8 text-xl font-bold">Free-gift items</h2>
         <p>
-          Free gifts that ship with family/jumbo packs (1L mug, 5L bucket, 40L
+          Free gifts that ship with Wasro packs (mug, bucket, tub, or 40L
           drum) are not sold separately and cannot be exchanged for cash.
           If the gift is missing or damaged, it is replaced free of charge
           along with the pack under the rules above.
