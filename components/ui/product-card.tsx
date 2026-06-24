@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MapPin, Gift } from "lucide-react";
 import type { Product } from "@/data/products";
 import { ProductImage } from "./product-image";
@@ -65,13 +64,10 @@ export function ProductCard({
               we can re-enable with a single uncomment + import.
           <OrderButtons variant="compact" />
           */}
-          <Link
-            href="/find-store"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-wasro-blue hover:text-wasro-blue-dark"
-          >
-            <MapPin size={12} />
-            Find in store near you
-          </Link>
+          <span className="inline-flex items-center gap-1.5 text-xs font-medium text-wasro-slate">
+            <MapPin size={12} className="text-wasro-blue" />
+            Available at leading retail stores
+          </span>
         </div>
       </div>
     </article>

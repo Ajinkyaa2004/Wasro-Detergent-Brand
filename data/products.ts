@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     shortName: "Powder 400g",
     category: "detergent-powder",
     size: "400g",
-    mrp: 40,
+    mrp: 45,
     offer: null,
     description:
       "400g Multi-Enzymes detergent. Family-pack convenience at a value-tier price.",
@@ -89,10 +89,10 @@ export const PRODUCTS: Product[] = [
     shortName: "Powder 500g",
     category: "detergent-powder",
     size: "500g",
-    mrp: 45,
-    offer: null,
+    mrp: 40,
+    offer: "FREE Mug",
     description:
-      "500g Multi-Enzymes detergent. A step up from the 400g for weekly family loads.",
+      "500g Multi-Enzymes detergent — comes with a free mug. Great value for weekly family loads.",
     image: "/products/powder-500g.webp",
   },
   {
@@ -117,9 +117,9 @@ export const PRODUCTS: Product[] = [
     category: "detergent-powder",
     size: "2kg",
     mrp: 280,
-    offer: "VALUE PACK · FREE Bucket",
+    offer: "FREE Bucket or Tub",
     description:
-      "2kg Value Pack — Multi-Enzymes detergent with a free red bucket. Bigger value, every wash.",
+      "2kg Value Pack — Multi-Enzymes detergent with a free bucket or tub inside. Bigger value, every wash.",
     image: "/products/powder-2kg.webp",
     featured: true,
   },
@@ -130,9 +130,9 @@ export const PRODUCTS: Product[] = [
     category: "detergent-powder",
     size: "3kg",
     mrp: 430,
-    offer: "FREE Bucket with this pack",
+    offer: "FREE Drum or Big Tub",
     description:
-      "3kg mega pack with a free printed bucket. Stock up for the season — ideal for large families.",
+      "3kg mega pack with a free drum or big tub. Stock up for the season — ideal for large families.",
     image: "/products/powder-3kg.webp",
   },
   {
@@ -142,7 +142,7 @@ export const PRODUCTS: Product[] = [
     category: "detergent-powder",
     size: "4kg",
     mrp: 600,
-    offer: "FREE 40L Drum with this pack",
+    offer: "FREE 40L Drum",
     description:
       "4kg jumbo pack ships with a free 40-litre drum. Wash, store, save — the biggest Wasro pack.",
     image: "/products/powder-4kg.webp",

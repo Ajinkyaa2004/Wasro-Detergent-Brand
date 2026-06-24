@@ -13,9 +13,9 @@ const COL_SHOP = [
 ];
 
 const COL_HELP = [
-  { label: "Find a Store", href: "/find-store" },
   { label: "Bulk Orders", href: "/bulk-orders" },
   { label: "Stain Guide", href: "/stain-guide" },
+  { label: "Offers", href: "/products#offers" },
   { label: "FAQs", href: "/about#faqs" },
 ];
 

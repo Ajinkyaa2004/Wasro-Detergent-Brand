@@ -44,14 +44,7 @@ export default function ShippingPage() {
           <li>
             <strong>121+ partner kirana stores</strong> across Assam,
             Meghalaya, Manipur, Tripura, Mizoram, Nagaland, Arunachal Pradesh,
-            West Bengal, Bihar, and Odisha. Find your nearest one at{" "}
-            <Link
-              href="/find-store"
-              className="font-semibold text-wasro-blue underline"
-            >
-              wasro.in/find-store
-            </Link>
-            .
+            West Bengal, Bihar, and Odisha. Ask your local grocer for Wasro.
           </li>
           <li>
             <strong>Quick-commerce apps</strong> (rolling out): Swiggy

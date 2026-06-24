@@ -511,7 +511,7 @@ export function brandAggregateRatingLd(input: {
 }
 
 // ---------------------------------------------------------------------------
-// CollectionPage wrapper for ItemList pages (products, stains, find-store)
+// CollectionPage wrapper for ItemList pages (products, stains)
 // ---------------------------------------------------------------------------
 
 export type CollectionLdInput = {

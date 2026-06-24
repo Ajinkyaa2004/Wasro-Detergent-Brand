@@ -11,6 +11,7 @@ import { CategoryShowcaseHero } from "@/components/products/category-showcase-he
 // want to revive it as a non-sticky/condensed variant later.
 // import { CategoryPillNav } from "@/components/products/category-pill-nav";
 import { CategorySection } from "@/components/products/category-section";
+import { OffersSection } from "@/components/products/offers-section";
 import { SectionWave } from "@/components/ui/section-wave";
 import {
   JsonLd,
@@ -82,6 +83,9 @@ export default async function ProductsPage() {
 
       {/* Visual category doorways */}
       <CategoryShowcaseHero />
+
+      {/* Free-gift / offers band — gift-with-pack ladder + wholesale bag */}
+      <OffersSection products={allProducts} />
 
       {/* Sticky CategoryPillNav removed — felt interruptive on scroll.
           The CategoryShowcaseHero above already provides category jumps. */}

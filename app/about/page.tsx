@@ -424,15 +424,15 @@ export default async function AboutPage() {
               Ready to try Wasro?
             </h2>
             <p className="mt-1 text-wasro-cream/80">
-              Find a store near you, or order online today.
+              Explore the full range or send us a bulk enquiry today.
             </p>
           </div>
           <div className="flex gap-3">
             <Link
-              href="/find-store"
+              href="/bulk-orders"
               className="wasro-cta-pulse rounded-pill bg-wasro-yellow px-6 py-3 text-sm font-bold text-wasro-charcoal transition hover:bg-wasro-yellow-dark hover:-translate-y-0.5"
             >
-              Find a store
+              Bulk orders
             </Link>
             <Link
               href="/products"

@@ -305,7 +305,7 @@ function SlideForm({
           value={slide.ctaHref ?? ""}
           onChange={(v) => onChange({ ctaHref: v })}
           maxLength={500}
-          placeholder="/find-store"
+          placeholder="/products"
         />
       </div>
 

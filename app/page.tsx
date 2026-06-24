@@ -4,7 +4,6 @@ import { CategoryStrip } from "@/components/sections/category-strip";
 import { FeaturedProducts } from "@/components/sections/featured-products";
 import { PackSizes } from "@/components/sections/pack-sizes";
 import { LifestyleBanner } from "@/components/sections/lifestyle-banner";
-import { DistributorStrip } from "@/components/sections/distributor-strip";
 import { WhyWasro } from "@/components/sections/why-wasro";
 import { StainGuideTeaser } from "@/components/sections/stain-guide-teaser";
 import { BulkCta } from "@/components/sections/bulk-cta";
@@ -101,11 +100,6 @@ export default async function Home() {
       <div className="wasro-cv-auto">
         <LifestyleBanner />
       </div>
-      <SectionWave from={COLORS.cream} to={COLORS.blue} />
-      <div className="wasro-cv-auto">
-        <DistributorStrip />
-      </div>
-      <SectionWave from={COLORS.blue} to={COLORS.white} />
       <div className="wasro-cv-auto">
         <WhyWasro />
       </div>

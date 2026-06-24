@@ -46,11 +46,11 @@ export const DEFAULT_HERO_CONTENT: HeroContent = {
   subtitle:
     "Wasro detergent powders, dishwash bars, and clothwash bars — crafted in Assam by Madhav Industries. Every jumbo pack ships with a free gift, from a printed bucket to a 40-litre drum.",
   primaryCta: { label: "Shop the range", href: "/products" },
-  secondaryCta: { label: "Find a store", href: "/find-store" },
+  secondaryCta: { label: "Bulk orders", href: "/bulk-orders" },
   stats: [
     { value: 121, suffix: "+", label: "Stores across NE India" },
-    { value: 15, label: "SKUs across 4 categories" },
-    { value: 5, prefix: "₹", label: "Starting price" },
+    { value: 14, label: "SKUs across 4 categories" },
+    { value: 10, prefix: "₹", label: "Starting price" },
   ],
   madeInAssamChip: "Made in Assam",
 };

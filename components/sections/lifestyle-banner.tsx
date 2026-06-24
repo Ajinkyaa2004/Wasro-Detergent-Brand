@@ -49,10 +49,10 @@ export function LifestyleBanner() {
                 <MagneticButton strength={0.22}>
                   <Ripple>
                     <Link
-                      href="/find-store"
+                      href="/products"
                       className="inline-flex items-center gap-2 rounded-pill bg-wasro-yellow px-6 py-3 text-sm font-bold text-wasro-charcoal shadow-xl transition hover:bg-wasro-yellow-dark"
                     >
-                      Find Wasro near you <ArrowRight size={14} />
+                      Explore the range <ArrowRight size={14} />
                     </Link>
                   </Ripple>
                 </MagneticButton>

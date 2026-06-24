@@ -8,7 +8,6 @@ import {
   ArrowLeft,
   ArrowUpRight,
   Home,
-  MapPin,
   MessageCircle,
   ShoppingBag,
   Sparkles,
@@ -40,13 +39,7 @@ const NAV_LINKS: NavLink[] = [
     label: "Products",
     href: "/products",
     icon: ShoppingBag,
-    description: "15 SKUs · 4 categories",
-  },
-  {
-    label: "Find a Store",
-    href: "/find-store",
-    icon: MapPin,
-    description: "121+ stores across India",
+    description: "14 SKUs · 4 categories",
   },
   {
     label: "Stain Guide",

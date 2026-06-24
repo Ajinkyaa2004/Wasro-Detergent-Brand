@@ -18,10 +18,6 @@ function pickMessage(pathname: string | null): string {
   // Order matters — most-specific match wins.
   if (pathname.startsWith("/bulk-orders")) return SITE.bulkMessage;
 
-  if (pathname.startsWith("/find-store")) {
-    return "Hi Wasro team! I'm trying to find a nearby store stocking Wasro detergent. Could you help me locate the closest one?";
-  }
-
   if (pathname.startsWith("/stain-guide")) {
     return "Hi Wasro team! I came across your stain guide and need a recommendation for a specific stain. Could you help me?";
   }

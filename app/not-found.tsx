@@ -105,11 +105,11 @@ export default function NotFound() {
               />
             </Link>
             <Link
-              href="/find-store"
+              href="/bulk-orders"
               className="group inline-flex items-center justify-between gap-3 rounded-2xl bg-white px-5 py-4 text-sm font-semibold text-wasro-charcoal ring-1 ring-wasro-border transition hover:-translate-y-0.5 hover:ring-wasro-blue"
             >
               <span className="inline-flex items-center gap-2">
-                <MapPin size={16} className="text-wasro-blue" /> Find a store
+                <MapPin size={16} className="text-wasro-blue" /> Bulk orders
               </span>
               <ArrowRight
                 size={14}

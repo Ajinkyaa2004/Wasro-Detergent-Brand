@@ -58,17 +58,17 @@ export const DEFAULT_OFFER: Offer = {
     {
       badge: "FAMILY PACK",
       title: "1kg Wasro Multi-Enzymes — the everyday family pack.",
-      subtitle: "Reliable wash, week after week. Stocked at 121+ Wasro stores.",
+      subtitle: "Reliable wash, week after week. Trusted across Northeast India.",
       ctaLabel: "Browse the range",
       ctaHref: "/products",
       productId: "powder-1kg",
     },
     {
       badge: "VALUE PACK",
-      title: "Buy a 2kg Wasro pack — get a free red bucket.",
-      subtitle: "Valid across all 121+ stores in Northeast India this month.",
-      ctaLabel: "Find a store",
-      ctaHref: "/find-store",
+      title: "Buy a 2kg Wasro pack — get a free bucket or tub.",
+      subtitle: "Real value in every family pack. While stocks last.",
+      ctaLabel: "See the offers",
+      ctaHref: "/products#offers",
       productId: "powder-2kg",
     },
     {
