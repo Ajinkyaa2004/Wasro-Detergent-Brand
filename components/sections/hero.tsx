@@ -179,11 +179,10 @@ export async function Hero() {
                   image (slides use z-10 → sticker uses z-20). */}
               <Image
                 src="/lifestyle/wasro-2x-formula.webp"
-                alt=""
+                alt="Wasro 2X multi-enzyme formula"
                 width={120}
                 height={80}
                 className="absolute -right-3 -bottom-6 z-20 h-14 w-auto rotate-[-6deg] rounded-card object-contain shadow-xl ring-2 ring-white md:-right-8 md:-bottom-10 md:h-20"
-                aria-hidden
               />
             </div>
 

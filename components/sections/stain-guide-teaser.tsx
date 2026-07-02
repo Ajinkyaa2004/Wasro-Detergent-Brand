@@ -23,11 +23,10 @@ export function StainGuideTeaser() {
         <div className="relative overflow-hidden rounded-[2rem] bg-wasro-blue text-wasro-cream">
           <Image
             src="/lifestyle/water-bubbles.webp"
-            alt=""
+            alt="Detergent bubbles in water"
             fill
             sizes="(min-width: 1280px) 1200px, 100vw"
             className="absolute inset-0 z-0 object-cover opacity-30 mix-blend-screen"
-            aria-hidden
           />
           <div
             aria-hidden

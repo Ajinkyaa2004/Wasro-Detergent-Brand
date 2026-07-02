@@ -94,7 +94,7 @@ export default async function StainGuidePage() {
         >
           <Image
             src="/lifestyle/stain-hero.webp"
-            alt=""
+            alt="Close-up of a tough stain lifting from white fabric"
             fill
             sizes="340px"
             className="object-cover"
