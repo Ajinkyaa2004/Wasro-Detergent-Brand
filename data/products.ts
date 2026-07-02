@@ -180,7 +180,7 @@ export const PRODUCTS: Product[] = [
     shortName: "Dish Tub 200g",
     category: "dishwash-tub",
     size: "200g",
-    mrp: null,
+    mrp: 25,
     offer: "FREE Scrubber",
     description:
       "200g scoop-style dishwash with a free scrubber. Easy on hands, tough on grease.",
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
     shortName: "Dish Tub 350g",
     category: "dishwash-tub",
     size: "350g",
-    mrp: null,
+    mrp: 40,
     offer: "FREE Scrubber",
     description:
       "350g dishwash tub with a free scrubber. Mid-sized pack for everyday kitchens.",
@@ -205,7 +205,7 @@ export const PRODUCTS: Product[] = [
     shortName: "Dish Tub 600g",
     category: "dishwash-tub",
     size: "600g",
-    mrp: null,
+    mrp: 60,
     offer: "FREE Scrubber",
     description:
       "600g family-size dishwash with a free scrubber. Long-lasting value.",
