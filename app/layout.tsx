@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -18,6 +19,20 @@ import {
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Self-hosted General Sans (display / headings). Previously loaded via a
+// render-blocking Fontshare <link rel="stylesheet"> on the LCP critical
+// path; self-hosting via next/font eliminates the third-party round-trip
+// and lets Next preload the exact woff2s with no external request.
+const generalSans = localFont({
+  src: [
+    { path: "./fonts/GeneralSans-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/GeneralSans-Semibold.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/GeneralSans-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-general-sans",
   display: "swap",
 });
 
@@ -157,23 +172,13 @@ export default function RootLayout({
     <html
       lang="en-IN"
       dir="ltr"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${generalSans.variable} h-full antialiased`}
     >
       <head>
-        {/* Preconnect early so the Fontshare TLS handshake completes
-            in parallel with HTML parsing. With this the actual stylesheet
-            fetch lands far faster — usually fast enough that the standard
-            blocking <link rel="stylesheet"> below adds <50ms of blocking.
-            (We tried the `media="print" onload=this.media='all'` swap
-            trick but React's JSX type system rejects string event
-            handlers, and the runtime savings vs preconnect alone were
-            marginal.) */}
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="" />
+        {/* General Sans is now self-hosted via next/font/local (see
+            layout.tsx) — no more render-blocking Fontshare stylesheet on
+            the LCP critical path. Next preloads the exact woff2s itself. */}
         <link rel="dns-prefetch" href="https://wa.me" />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap"
-        />
         {/* NOTE on LCP preload: we intentionally do NOT emit a manual
             `<link rel="preload" href="/products/powder-2kg.webp">` here.
             Next/Image's `priority` flag already generates a preload for

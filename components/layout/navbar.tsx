@@ -193,7 +193,7 @@ export function Navbar() {
           >
             <Image
               src="/logo1-cropped.png"
-              alt="Wasro"
+              alt="Wasro — Trusted Clean for Every Home"
               width={408}
               height={250}
               priority

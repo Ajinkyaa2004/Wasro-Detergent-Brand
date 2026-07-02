@@ -2,12 +2,15 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/utils";
 
 /**
- * robots.txt for wasro.in.
+ * robots.txt for www.wasro.in.
  *
- * - Allow all crawlers everywhere except /api/ (form-submission endpoint).
- * - Point them at the dynamic sitemap.
- * - Set the canonical host so Google picks the right hostname when there
- *   are redirects from www → apex (or vice-versa).
+ * - Allow all crawlers everywhere except /api/ + /admin/.
+ * - Point them at the dynamic sitemap (now on the www canonical host).
+ *
+ * NOTE: the non-standard `Host:` directive was removed — Google does not
+ * honour it (it was a Yandex directive), and canonical host selection is
+ * handled correctly by our self-referencing canonical tags + the apex→www
+ * 308 redirect. Keeping it risked signalling an inconsistent host.
  */
 export default function robots(): MetadataRoute.Robots {
   const base = SITE.url.replace(/\/$/, "");
@@ -22,6 +25,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${base}/sitemap.xml`,
-    host: base,
   };
 }

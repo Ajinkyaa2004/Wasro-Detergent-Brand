@@ -27,8 +27,8 @@ import type { NextConfig } from "next";
 const ContentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-  "style-src 'self' 'unsafe-inline' https://api.fontshare.com",
-  "font-src 'self' https://api.fontshare.com https://cdn.fontshare.com data:",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self' data:",
   "img-src 'self' data: blob: https:",
   "connect-src 'self' https:",
   "frame-src 'none'",

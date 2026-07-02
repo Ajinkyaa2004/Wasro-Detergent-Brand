@@ -29,9 +29,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Bulk Detergent Orders & Wholesale Enquiries — Wasro",
+  title: "Bulk Detergent Orders & Wholesale Enquiries",
   description:
-    "Wholesale Wasro detergent for shops, supermarkets, hostels, hotels, NGOs, corporates, and distributors. Direct from the plant in Amingaon, Assam — pan-India dispatch, GST-compliant invoicing, 1 working-day response.",
+    "Wholesale Wasro detergent for shops, hostels, hotels, NGOs & distributors — direct from our Assam plant. Pan-India dispatch, GST invoicing, 1-day response.",
   path: "/bulk-orders",
   keywords: [
     "bulk detergent supplier India",

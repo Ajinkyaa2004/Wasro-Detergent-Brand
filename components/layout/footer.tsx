@@ -37,7 +37,7 @@ export function Footer() {
           <div className="inline-flex items-center rounded-xl bg-white px-3 py-2">
             <Image
               src="/logo1-cropped.png"
-              alt="Wasro"
+              alt="Wasro — Trusted Clean for Every Home"
               width={408}
               height={250}
               className="h-10 w-auto"

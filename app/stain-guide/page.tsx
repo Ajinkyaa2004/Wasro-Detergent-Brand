@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Wasro Stain Guide — Curry, Tea, Grease, Ink & More",
   description:
-    "Indian-household stain removal guide. Curry, turmeric, tea, coffee, grease, ink, blood, school-uniform mud — pick the stain you're fighting and get the right Wasro detergent plus a step-by-step technique that actually works.",
+    "Wasro stain removal guide for Indian homes — curry, turmeric, tea, grease, ink, blood & uniform mud. Pick your stain for the right pack and a step-by-step fix.",
   path: "/stain-guide",
   keywords: [
     "stain removal guide India",

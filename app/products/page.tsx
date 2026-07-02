@@ -22,9 +22,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "All Wasro Products — Detergent Powder, Dishwash Bars, Clothwash Bars",
+  title: "Wasro Products — Detergent, Dishwash & Clothwash",
   description:
-    "Browse all 14 Wasro SKUs across detergent powder (₹10 sachet to 4kg jumbo pack with free drum), dishwash bars (₹5 / ₹10), dishwash tubs (200g / 350g / 600g), and clothwash bars. MRP, sizes, and free-gift details for every pack.",
+    "Browse all 14 Wasro SKUs — detergent powder, dishwash bars, dishwash tubs & clothwash bars. MRP, pack sizes & free-gift details, from ₹5 to 4kg jumbo packs.",
   path: "/products",
   keywords: [
     "Wasro products",

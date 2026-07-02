@@ -24,7 +24,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = buildMetadata({
   title: "About Wasro & Madhav Industries — Assam's Detergent Brand",
   description:
-    "Wasro is a regional Indian detergent brand manufactured by Madhav Industries at Brahmaputra Industrial Park, Amingaon, Assam. Serving 121+ stores across 10 states in Northeast India and beyond — honest pricing, real free gifts, single accountable plant.",
+    "Wasro is an Indian detergent brand by Madhav Industries, made in Amingaon, Assam and sold at 121+ stores across Northeast India. Honest pricing, real free gifts.",
   path: "/about",
   keywords: [
     "Madhav Industries Assam",

@@ -85,6 +85,13 @@ export function buildMetadata({
     keywords: [...BRAND_KEYWORDS, ...keywords],
     alternates: {
       canonical,
+      // Emit hreflang on every page (the site is single-locale en-IN).
+      // Points each alternate at the page's own canonical so the tags
+      // render consistently site-wide rather than only in the root layout.
+      languages: {
+        "en-IN": canonical,
+        "x-default": canonical,
+      },
     },
     openGraph: {
       title,
@@ -340,16 +347,33 @@ export function productLd(p: Product): JsonLd {
   // Emitting `price: null` would fail Google's structured-data
   // validation and could disable rich-result eligibility entirely.
   if (p.mrp != null) {
+    // priceValidUntil is required-recommended by Google for Offers.
+    // Set to end of next year so it never lapses between deploys.
+    const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
     base.offers = {
       "@type": "Offer",
       url: absoluteUrl(`/products#${p.id}`),
       priceCurrency: "INR",
       price: p.mrp,
+      priceValidUntil,
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       seller: {
         "@type": "Organization",
         name: SITE.legalName,
+      },
+      // Return policy mirrors the published /returns page (30-day window).
+      // We intentionally omit shippingDetails — Wasro is sold via retail
+      // kirana + quick-commerce, not direct D2C from this site, so
+      // claiming site-level delivery specifics would be inaccurate.
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "IN",
+        returnPolicyCategory:
+          "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnAtKiosk",
+        returnFees: "https://schema.org/FreeReturn",
       },
     };
   }

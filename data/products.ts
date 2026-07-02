@@ -59,7 +59,7 @@ export const PRODUCTS: Product[] = [
   // — the ₹10 pack is now the entry-price SKU for detergent powder.
   {
     id: "powder-10",
-    name: "Wasro Detergent Powder Pack",
+    name: "Wasro Detergent Powder",
     shortName: "Powder ₹10",
     category: "detergent-powder",
     size: "₹10 Pack",

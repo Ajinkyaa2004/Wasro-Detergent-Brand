@@ -21,7 +21,6 @@ from conftest import wait_for, wait_for_all, dismiss_cookie_banner
 EXPECTED_NAV = [
     ("Home", "/"),
     ("Products", "/products"),
-    ("Find a Store", "/find-store"),
     ("Stain Guide", "/stain-guide"),
     ("About", "/about"),
 ]

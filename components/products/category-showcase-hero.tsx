@@ -42,7 +42,7 @@ export function CategoryShowcaseHero() {
               <Reveal key={cat.id} delay={i * 0.08}>
                 <TiltCard intensity={6}>
                   <Link
-                    href={`#${cat.id}`}
+                    href={`/products#${cat.id}`}
                     className={cn(
                       "group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-gradient-to-br p-6 ring-1 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl",
                       theme.cardGradient,
@@ -133,7 +133,7 @@ export function CategoryShowcaseHero() {
                           theme.accentText
                         )}
                       >
-                        Explore range <ArrowRight size={14} />
+                        Explore {cat.label.toLowerCase()} <ArrowRight size={14} />
                       </div>
                     </div>
                   </Link>

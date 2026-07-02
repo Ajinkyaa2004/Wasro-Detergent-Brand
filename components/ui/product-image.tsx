@@ -30,6 +30,15 @@ export function ProductImage({
   priority?: boolean;
 }) {
   if (product.imageUrl) {
+    // Keyword-rich alt: pack name + size + free gift (when present).
+    // "FREE 40L Drum with this pack" → "with free 40l drum".
+    const gift = product.offer
+      ? ` with free ${product.offer
+          .replace(/^(VALUE PACK\s*·\s*)?FREE\s*/i, "")
+          .replace(/\s*with this pack$/i, "")
+          .trim()
+          .toLowerCase()}`
+      : "";
     return (
       <div
         className={cn(
@@ -39,10 +48,13 @@ export function ProductImage({
       >
         <Image
           src={product.imageUrl}
-          alt={`${product.name} — ${product.size}`}
+          alt={`${product.name} ${product.size}${gift}`}
           fill
           priority={priority}
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          // 30vw at desktop covers both the 4-col product grid (~25vw)
+          // and the hero's max-w-md (448px ≈ 31vw of a 1440 viewport)
+          // without under-requesting on the LCP hero image.
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover"
         />
       </div>

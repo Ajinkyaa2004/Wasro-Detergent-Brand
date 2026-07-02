@@ -12,13 +12,11 @@ import { Reviews } from "@/components/sections/reviews";
 import { SectionWave } from "@/components/ui/section-wave";
 import { SplashScreen } from "@/components/splash/splash-screen";
 import { getFeaturedProducts } from "@/data/products";
-import { getVisibleReviews, aggregate } from "@/lib/reviews";
 import {
   JsonLd,
   buildMetadata,
   productsItemListLd,
   plantLocalBusinessLd,
-  brandAggregateRatingLd,
 } from "@/lib/seo";
 import { SITE } from "@/lib/utils";
 
@@ -37,7 +35,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = buildMetadata({
   title: `${SITE.brand} — ${SITE.tagline}`,
   description:
-    "Wasro is an Indian detergent brand by Madhav Industries — manufactured in Assam, trusted at 121+ stores across Northeast India. Detergent powders, dishwash bars, dishwash tubs & clothwash bars, starting at ₹5. Free gift in every family pack.",
+    "Wasro detergent powders, dishwash bars & clothwash bars by Madhav Industries — made in Assam, at 121+ stores. Value packs from ₹5, free gifts in jumbo packs.",
   path: "/",
   keywords: [
     "detergent powder online India",
@@ -48,25 +46,8 @@ export const metadata: Metadata = buildMetadata({
   ],
 });
 
-export default async function Home() {
+export default function Home() {
   const featured = getFeaturedProducts();
-  // Load reviews here too so we can emit AggregateRating JSON-LD in
-  // parallel with rendering the section. The actual Reviews component
-  // calls getVisibleReviews() again — same cache hit, ~no extra cost.
-  const reviews = await getVisibleReviews();
-  const agg = aggregate(reviews);
-  const ratingLd = agg
-    ? brandAggregateRatingLd({
-        average: agg.average,
-        count: agg.count,
-        featured: reviews.slice(0, 3).map((r) => ({
-          author: r.name,
-          body: r.body,
-          rating: r.rating,
-          date: r.date,
-        })),
-      })
-    : null;
   return (
     <>
       {/* First-visit branded splash. Imported here (not in the root
@@ -75,14 +56,17 @@ export default async function Home() {
       <SplashScreen />
 
       {/* Home-page JSON-LD: featured-product ItemList + the manufacturing
-          plant as a LocalBusiness + (when reviews exist) brand-level
-          AggregateRating. The root layout already emits
-          Organization + WebSite, so we don't repeat those here. */}
+          plant as a LocalBusiness. The root layout already emits
+          Organization + WebSite, so we don't repeat those here.
+          NOTE: we deliberately do NOT emit a brand/Organization-level
+          AggregateRating — self-authored review markup of your own
+          business is not eligible for Google rich results and can
+          trigger a manual action. Star ratings belong on Product nodes,
+          driven by genuine verified customer reviews. */}
       <JsonLd
         data={[
           productsItemListLd(featured),
           plantLocalBusinessLd(),
-          ...(ratingLd ? [ratingLd] : []),
         ]}
       />
       {/* Above the fold: Hero + first-look sections, render eagerly. */}

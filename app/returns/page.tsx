@@ -6,7 +6,7 @@ import { JsonLd, buildMetadata, breadcrumbLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Returns & Refund Policy",
   description:
-    "How Wasro handles damaged, defective, or wrongly-shipped detergent packs — including the 7-day exchange window and how to claim a refund through your retailer or quick-commerce platform.",
+    "How Wasro handles damaged, defective or wrong detergent packs — the 48-hour report window and how to claim a refund or replacement via your retailer or platform.",
   path: "/returns",
 });
 

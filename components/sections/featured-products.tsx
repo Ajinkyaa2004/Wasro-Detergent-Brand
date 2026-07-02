@@ -43,7 +43,10 @@ export async function FeaturedProducts() {
         {featured.map((product, i) => (
           <Reveal key={product.id} delay={i * 0.08}>
             <TiltCard intensity={6}>
-              <ProductCard product={product} priority={i < 2} />
+              {/* No priority — this grid is below the fold, so eager-
+                  loading competed with the hero image's LCP preload.
+                  Let these lazy-load on scroll. */}
+              <ProductCard product={product} />
             </TiltCard>
           </Reveal>
         ))}

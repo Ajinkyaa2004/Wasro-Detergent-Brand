@@ -67,7 +67,7 @@ const SIZES: PackSize[] = [
     pitch:
       "2kg, 3kg & 4kg mega packs — built for big families, joint households, and small businesses. The 4kg ships with a FREE 40-litre drum.",
     image: "/products/powder-4kg.webp",
-    startsAt: "₹160",
+    startsAt: "₹280",
     giftLabel: "Free drum with 4kg",
     anchor: "/products#detergent-powder",
     accent: {

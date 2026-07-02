@@ -12,6 +12,10 @@ const ICONS: Record<string, string> = {
 export function CategoryStrip() {
   return (
     <section className="border-y border-wasro-border bg-white">
+      {/* sr-only section heading — fixes the h1→h3 hierarchy skip (the
+          hero's h1 was followed directly by these category h3s) without
+          altering the compact strip's visual design. */}
+      <h2 className="sr-only">Shop Wasro by category</h2>
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-wasro-border md:grid-cols-4">
         {CATEGORIES.map((cat) => {
           const count = PRODUCTS.filter((p) => p.category === cat.id).length;
