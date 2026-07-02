@@ -93,7 +93,7 @@ export default async function StainGuidePage() {
           className="pointer-events-none absolute right-0 top-1/2 hidden h-[280px] w-[280px] -translate-y-1/2 overflow-hidden rounded-full opacity-25 mix-blend-screen md:block lg:right-12 lg:h-[340px] lg:w-[340px]"
         >
           <Image
-            src="/lifestyle/stain-hero.jpg"
+            src="/lifestyle/stain-hero.webp"
             alt=""
             fill
             sizes="340px"

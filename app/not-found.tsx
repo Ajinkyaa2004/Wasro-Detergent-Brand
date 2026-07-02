@@ -13,7 +13,7 @@ import { SITE } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Page not found",
   description:
-    "The page you're looking for doesn't exist. Browse the Wasro product range or find your nearest store.",
+    "The page you're looking for doesn't exist. Browse the Wasro product range or send us a bulk enquiry.",
   robots: { index: false, follow: false },
 };
 
@@ -46,7 +46,7 @@ export default function NotFound() {
         <div className="relative order-2 md:order-1">
           <div className="relative mx-auto aspect-square w-full max-w-md">
             <Image
-              src="/lifestyle/hero-bubble-pack.png"
+              src="/lifestyle/hero-bubble-pack.webp"
               alt="Wasro detergent pack with bubbles"
               fill
               priority

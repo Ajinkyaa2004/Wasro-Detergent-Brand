@@ -10,10 +10,11 @@ import { SITE } from "@/lib/utils";
  *
  *   1.00  /          (home)
  *   0.95  /products  (catalogue)
- *   0.90  /find-store, /bulk-orders
+ *   0.90  /bulk-orders
  *   0.85  /stain-guide, /about
- *   0.80  product anchors (15 SKU deep-links)
- *   0.30  legal pages
+ *   0.80  product anchors (14 SKU deep-links → #<sku> card anchors)
+ *   0.40  /shipping, /returns
+ *   0.30  /privacy, /terms
  *
  * Each product anchor entry carries `images: [productPng]` so Google
  * Image search can index the SKU PNG and surface it under "Wasro 1kg
@@ -85,11 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Per-SKU deep-links. The product cards live inside the categorised
-  // sections on /products and each section is `id={category.id}`; we point
-  // to those anchors. Google honours the URL but treats #fragments
-  // identically for indexing, so this also serves as a hint for
-  // canonicalisation when a user shares a deep link.
+  // Per-SKU deep-links + image indexing. Each product card renders an
+  // `id={p.id}` anchor (see ProductCard), so `/products#<sku>` resolves
+  // to that card for on-page deep-linking. Google treats #fragments as
+  // the same document for indexing, so these primarily serve to submit
+  // each SKU's pack image (via the `images` extension) for Google Image
+  // search — the actual SEO value here.
   const productEntries: MetadataRoute.Sitemap = PRODUCTS.map((p) => ({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     url: `${base}/products#${p.id}`,

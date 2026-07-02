@@ -58,14 +58,18 @@ export function Footer() {
 
           <div className="flex items-center gap-3 pt-1">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/wasro.india"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="rounded-pill bg-white/10 p-2 transition hover:bg-white/20"
             >
               <InstagramIcon />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/wasro.india"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               className="rounded-pill bg-white/10 p-2 transition hover:bg-white/20"
             >

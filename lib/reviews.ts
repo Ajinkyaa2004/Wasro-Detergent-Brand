@@ -124,7 +124,7 @@ export const DEFAULT_REVIEWS: Review[] = [
     rating: 4,
     title: "Reliable everyday detergent",
     body:
-      "Have been using the 500g pack for our small office cleaning crew for four months. Consistent quality across batches, which is rare at this price point. Free dishwash bar that comes inside is a nice surprise.",
+      "Have been using the 500g pack for our small office cleaning crew for four months. Consistent quality across batches, which is rare at this price point. The free mug that comes inside is a nice surprise.",
     productLabel: "Detergent Powder · 500g",
     date: "2026-04-10",
   },

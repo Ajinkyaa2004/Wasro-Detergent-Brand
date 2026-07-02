@@ -13,7 +13,10 @@ export function ProductCard({
   priority?: boolean;
 }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-card border border-wasro-border bg-white shadow-[0_2px_8px_-3px_rgba(15,66,117,0.08)] transition hover:shadow-[0_8px_28px_-8px_rgba(15,66,117,0.18)]">
+    <article
+      id={product.id}
+      className="group flex scroll-mt-24 flex-col overflow-hidden rounded-card border border-wasro-border bg-white shadow-[0_2px_8px_-3px_rgba(15,66,117,0.08)] transition hover:shadow-[0_8px_28px_-8px_rgba(15,66,117,0.18)]"
+    >
       <div className="relative">
         <ProductImage
           product={product}

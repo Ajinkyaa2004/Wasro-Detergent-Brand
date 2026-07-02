@@ -22,7 +22,7 @@ export function StainGuideTeaser() {
       <Reveal>
         <div className="relative overflow-hidden rounded-[2rem] bg-wasro-blue text-wasro-cream">
           <Image
-            src="/lifestyle/water-bubbles.jpg"
+            src="/lifestyle/water-bubbles.webp"
             alt=""
             fill
             sizes="(min-width: 1280px) 1200px, 100vw"
@@ -60,7 +60,7 @@ export function StainGuideTeaser() {
               {POPULAR_STAINS.map((stain) => (
                 <Link
                   key={stain}
-                  href={`/stain-guide?stain=${encodeURIComponent(stain)}`}
+                  href="/stain-guide"
                   className="rounded-pill bg-white/10 px-4 py-2 text-sm text-wasro-cream backdrop-blur transition hover:bg-white/20 hover:-translate-y-0.5"
                 >
                   {stain}

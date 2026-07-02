@@ -39,7 +39,7 @@ export type PageMetaInput = {
   description: string;
   /** Path relative to site root, e.g. "/products". Used for canonical + og:url. */
   path: string;
-  /** Public image path (e.g. "/lifestyle/hero-family.jpg"). Defaults to the
+  /** Public image path (e.g. "/lifestyle/hero-family.webp"). Defaults to the
    *  site-wide OG image rendered by app/opengraph-image.tsx. */
   ogImage?: string;
   /** Override Open Graph type. Default "website". */

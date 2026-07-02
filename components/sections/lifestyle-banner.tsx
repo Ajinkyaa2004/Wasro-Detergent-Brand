@@ -10,7 +10,7 @@ export function LifestyleBanner() {
     <section className="relative isolate overflow-hidden">
       <div className="relative h-[520px] w-full md:h-[600px]">
         <Image
-          src="/lifestyle/hero-family.jpg"
+          src="/lifestyle/hero-family.webp"
           alt="A family doing laundry together with Wasro"
           fill
           priority={false}

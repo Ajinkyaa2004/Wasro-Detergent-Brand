@@ -62,7 +62,7 @@ export default async function ProductsPage() {
           collectionPageLd({
             name: "Wasro Product Catalogue",
             description:
-              "All 15 Wasro SKUs across detergent powder, dishwash bar, dishwash tub, and clothwash bar.",
+              "All 14 Wasro SKUs across detergent powder, dishwash bar, dishwash tub, and clothwash bar.",
             path: "/products",
             itemList: productsItemListLd(allProducts),
           }),
@@ -72,13 +72,13 @@ export default async function ProductsPage() {
         eyebrow="Our Range"
         title={
           <>
-            <AnimatedCounter value={15} className="text-wasro-blue" /> products.{" "}
+            <AnimatedCounter value={14} className="text-wasro-blue" /> products.{" "}
             <AnimatedCounter value={4} className="text-wasro-blue" /> categories.
             <br className="hidden md:block" />
             One trusted brand.
           </>
         }
-        subtitle="From a ₹10 sachet to a 4kg mega pack with a free drum, Wasro covers every Indian household need. Pick a pack and find your nearest store."
+        subtitle="From a ₹10 sachet to a 4kg mega pack with a free drum, Wasro covers every Indian household need — with a free gift in every family pack."
       />
 
       {/* Visual category doorways */}

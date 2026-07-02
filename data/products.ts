@@ -57,8 +57,6 @@ export const PRODUCTS: Product[] = [
   //
   // The ₹5 single-wash sachet (powder-5) was retired from the catalogue
   // — the ₹10 pack is now the entry-price SKU for detergent powder.
-  // The pack image at /products/powder-5.webp is left in place for now;
-  // it's no longer referenced from anywhere in the data layer.
   {
     id: "powder-10",
     name: "Wasro Detergent Powder Pack",

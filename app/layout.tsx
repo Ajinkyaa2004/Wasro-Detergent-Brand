@@ -175,10 +175,10 @@ export default function RootLayout({
           href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap"
         />
         {/* NOTE on LCP preload: we intentionally do NOT emit a manual
-            `<link rel="preload" href="/products/powder-2kg.png">` here.
+            `<link rel="preload" href="/products/powder-2kg.webp">` here.
             Next/Image's `priority` flag already generates a preload for
             the OPTIMIZED variant (`/_next/image?url=...&w=...`); manually
-            preloading the raw PNG triggers a "resource was preloaded but
+            preloading the raw file triggers a "resource was preloaded but
             not used" console warning because Chrome ends up loading the
             optimized URL instead. The priority+sizes combo on
             <ProductImage> is sufficient. */}

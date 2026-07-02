@@ -34,8 +34,7 @@ export const SITE = {
   logo: "/logo1-cropped.png",
   foundingDate: "2022",
   sameAs: [
-    // Add real social URLs as they go live; placeholder array keeps schema valid
-    // e.g. "https://www.instagram.com/wasro.official",
-    // e.g. "https://www.facebook.com/wasroindia",
+    "https://www.instagram.com/wasro.india",
+    "https://www.facebook.com/wasro.india",
   ] as string[],
 };

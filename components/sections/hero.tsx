@@ -178,7 +178,7 @@ export async function Hero() {
                   on-screen. Z-index so it sits above the cycling product
                   image (slides use z-10 → sticker uses z-20). */}
               <Image
-                src="/lifestyle/wasro-2x-formula.png"
+                src="/lifestyle/wasro-2x-formula.webp"
                 alt=""
                 width={120}
                 height={80}

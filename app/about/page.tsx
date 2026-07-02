@@ -41,7 +41,7 @@ export const metadata: Metadata = buildMetadata({
 
 const STATS = [
   { value: 121, suffix: "+", label: "Stores", sublabel: "Across NE India & beyond" },
-  { value: 15, label: "SKUs", sublabel: "Across 4 categories" },
+  { value: 14, label: "SKUs", sublabel: "Across 4 categories" },
   { value: 10, label: "States", sublabel: "Covered & growing" },
   { value: 100, suffix: "%", label: "Made in Assam", sublabel: "Single, accountable plant" },
 ];
@@ -80,7 +80,7 @@ export default async function AboutPage() {
       {/* Lifestyle banner: man holding clean clothes */}
       <section className="relative h-[420px] w-full overflow-hidden">
         <Image
-          src="/lifestyle/man-clean-clothes.jpg"
+          src="/lifestyle/man-clean-clothes.webp"
           alt="A satisfied customer holding a pile of clean Wasro-washed clothes"
           fill
           sizes="100vw"
@@ -197,7 +197,7 @@ export default async function AboutPage() {
               {/* Hero — m1 */}
               <div className="group relative col-span-2 aspect-[16/9] overflow-hidden rounded-card shadow-xl ring-1 ring-wasro-border md:col-span-2 md:row-span-2 md:aspect-auto">
                 <Image
-                  src="/lifestyle/man1.png"
+                  src="/lifestyle/man1.webp"
                   alt="Madhav Industries manufacturing plant — production floor"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
@@ -209,19 +209,19 @@ export default async function AboutPage() {
               {/* 4 small tiles — m2..m5 */}
               {[
                 {
-                  src: "/lifestyle/man2.png",
+                  src: "/lifestyle/man2.webp",
                   alt: "Wasro Multi-Enzymes pack moving along the conveyor",
                 },
                 {
-                  src: "/lifestyle/man3.png",
+                  src: "/lifestyle/man3.webp",
                   alt: "Quality-control inspection of a Wasro detergent pack",
                 },
                 {
-                  src: "/lifestyle/man4.png",
+                  src: "/lifestyle/man4.webp",
                   alt: "Finished Wasro cartons stacked in the despatch area",
                 },
                 {
-                  src: "/lifestyle/man5.png",
+                  src: "/lifestyle/man5.webp",
                   alt: "Wasro Dishwash Tub at the QC station",
                 },
               ].map((img) => (
@@ -270,9 +270,9 @@ export default async function AboutPage() {
               {
                 icon: Gift,
                 title: "A free gift, every family pack",
-                body: "Mug with 400g, dishwash bar with 500g, printed bucket or tub with 2kg, drum with 3kg — useful gifts you'll actually keep. Not stickers, not coupons. Real value.",
-                stat: "14",
-                statLabel: "gift pairings",
+                body: "Mug with 500g, bucket or tub with 2kg, drum or big tub with 3kg, 40L drum with 4kg — useful gifts you'll actually keep. Not stickers, not coupons. Real value.",
+                stat: "4",
+                statLabel: "gift tiers",
                 bg: "bg-gradient-to-br from-wasro-yellow to-amber-600",
                 ring: "hover:ring-wasro-yellow/40",
               },
@@ -373,7 +373,7 @@ export default async function AboutPage() {
           <Reveal delay={0.1}>
             <div className="relative aspect-[3/4] overflow-hidden rounded-card shadow-2xl">
               <Image
-                src="/lifestyle/clothes-still-life.jpg"
+                src="/lifestyle/clothes-still-life.webp"
                 alt="Clean folded clothes — the result of Wasro"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
