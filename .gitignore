@@ -39,17 +39,10 @@ yarn-error.log*
 # private business documents (signed contract, invoices, debtor PII) — never commit
 /_docs/
 
-# image working folders — sources, AI generations & scratch. The deployable app
-# ships only from /public, so these (~150MB) are kept out of the repo.
-/Creatives/
-/Images/
-/generated_images/
-/new_images/
-
-# stray root-level logo working copies (canonical versions live in /public)
-/logo.png
-/logo1.png
-/logo1-cropped.png
+# consolidated local backup of every image the site actually uses (mirror of
+# /public). Handy single-folder reference for editing; NOT needed in the repo
+# since the deployable copies already live in /public.
+/_used-images/
 
 # Selenium suite local artifacts
 /tests/.venv/

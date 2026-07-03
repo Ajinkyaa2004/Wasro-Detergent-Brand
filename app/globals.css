@@ -333,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
   animation-duration: 4.5s;
 }
 
-/* Marquee already defined inline; keep here for global availability too */
+/* Honour reduced-motion: neutralise all decorative animations. */
 @media (prefers-reduced-motion: reduce) {
   .wasro-pulse-ring,
   .wasro-float,

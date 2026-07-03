@@ -4,12 +4,8 @@ import { getResolvedProducts } from "@/lib/server/products-resolved";
 import { PageHero } from "@/components/ui/page-hero";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { CategoryShowcaseHero } from "@/components/products/category-showcase-hero";
-// Removed: the sticky CategoryPillNav. Visitors flagged it as interruptive
-// during scroll. The CategoryShowcaseHero on top of the page already lets
-// people jump to a category, and the in-page section headings make
-// orientation obvious. The component file is kept on disk in case we
-// want to revive it as a non-sticky/condensed variant later.
-// import { CategoryPillNav } from "@/components/products/category-pill-nav";
+// The sticky category pill-nav was removed (felt interruptive on scroll).
+// The CategoryShowcaseHero above already provides category jumps.
 import { CategorySection } from "@/components/products/category-section";
 import { OffersSection } from "@/components/products/offers-section";
 import { SectionWave } from "@/components/ui/section-wave";

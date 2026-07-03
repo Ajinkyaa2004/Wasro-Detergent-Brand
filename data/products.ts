@@ -76,9 +76,9 @@ export const PRODUCTS: Product[] = [
     category: "detergent-powder",
     size: "400g",
     mrp: 45,
-    offer: null,
+    offer: "FREE Mug with this pack",
     description:
-      "400g Multi-Enzymes detergent. Family-pack convenience at a value-tier price.",
+      "400g Multi-Enzymes detergent — comes with a free measuring mug. Family-pack value, every wash.",
     image: "/products/powder-400g.webp",
   },
   {
