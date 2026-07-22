@@ -159,10 +159,26 @@ export function OffersSection({ products }: { products: Product[] }) {
           </div>
         </Reveal>
 
+        {/* Featured poster — Free Big Basket with every 4 kg pack */}
+        <Reveal delay={0.12}>
+          <div className="mt-10 flex justify-center rounded-[1.75rem] bg-gradient-to-b from-wasro-blue/[0.06] to-transparent p-6 md:p-10">
+            <div className="w-full max-w-[440px] overflow-hidden rounded-[1.25rem] shadow-2xl ring-1 ring-wasro-border">
+              <Image
+                src="/lifestyle/offer-basket-4kg.webp"
+                alt="Free large Big Basket with lid on every Wasro 4 kg detergent pack — spacious, strong, durable"
+                width={760}
+                height={1076}
+                sizes="(min-width: 768px) 440px, 90vw"
+                className="h-auto w-full"
+              />
+            </div>
+          </div>
+        </Reveal>
+
         {/* Honest fine print — keeps it premium, not shady */}
         <p className="mt-6 text-center text-xs text-wasro-slate/80">
-          Free gifts (bucket / tub / drum) are subject to availability and may
-          vary by region and stock. MRP inclusive of all taxes.
+          Free gifts (bucket / tub / drum / basket) are subject to availability
+          and may vary by region and stock. MRP inclusive of all taxes.
         </p>
       </div>
     </section>
