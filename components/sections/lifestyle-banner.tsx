@@ -14,6 +14,7 @@ export function LifestyleBanner() {
           alt="A family doing laundry together with Wasro"
           fill
           priority={false}
+          quality={82}
           sizes="100vw"
           className="object-cover object-center"
         />
