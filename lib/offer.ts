@@ -73,7 +73,7 @@ export const DEFAULT_OFFER: Offer = {
     },
     {
       badge: "JUMBO PACK",
-      title: "4kg mega pack ships with a free 40-litre drum.",
+      title: "4kg mega pack ships with a free 40-litre drum or big basket.",
       subtitle: "Stock the whole season. Wash, store, save.",
       ctaLabel: "See all packs",
       ctaHref: "/products",

@@ -12,7 +12,7 @@ import { TiltCard } from "@/components/ui/tilt-card";
  * the client:
  *   - 2kg  (₹280, 10 pc/bag)  → free Bucket or Tub
  *   - 3kg  (₹430,  8 pc/bag)  → free Drum or Big Tub
- *   - 4kg  (₹600,  6 pc/bag)  → free 40L Drum
+ *   - 4kg  (₹600,  6 pc/bag)  → free 40L Drum or Big Basket
  *
  * Plus the ₹10 wholesale canvas-bag offer (1 free bucket per bag) as a
  * wide hero banner that routes retailers to the bulk-orders page.
@@ -31,7 +31,7 @@ type GiftDeal = {
 const GIFT_LADDER: GiftDeal[] = [
   { id: "powder-2kg", size: "2 kg", gift: "Bucket or Tub", perBag: "10 packs / bag" },
   { id: "powder-3kg", size: "3 kg", gift: "Drum or Big Tub", perBag: "8 packs / bag" },
-  { id: "powder-4kg", size: "4 kg", gift: "40 L Drum", perBag: "6 packs / bag" },
+  { id: "powder-4kg", size: "4 kg", gift: "40 L Drum or Big Basket", perBag: "6 packs / bag" },
 ];
 
 export function OffersSection({ products }: { products: Product[] }) {

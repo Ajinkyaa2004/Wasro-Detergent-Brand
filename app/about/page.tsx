@@ -270,7 +270,7 @@ export default async function AboutPage() {
               {
                 icon: Gift,
                 title: "A free gift, every family pack",
-                body: "Mug with 500g, bucket or tub with 2kg, drum or big tub with 3kg, 40L drum with 4kg — useful gifts you'll actually keep. Not stickers, not coupons. Real value.",
+                body: "Mug with 500g, bucket or tub with 2kg, drum or big tub with 3kg, 40L drum or big basket with 4kg — useful gifts you'll actually keep. Not stickers, not coupons. Real value.",
                 stat: "4",
                 statLabel: "gift tiers",
                 bg: "bg-gradient-to-br from-wasro-yellow to-amber-600",
@@ -358,7 +358,8 @@ export default async function AboutPage() {
                 14 packs. 4 categories. Every household need.
               </h2>
               <p className="mt-4 text-wasro-slate">
-                From a ₹10 sachet to a 4kg jumbo pack with a free drum, our
+                From a ₹10 sachet to a 4kg jumbo pack with a free basket or
+                drum, our
                 range covers everyday detergent, dishwash, and clothwash needs
                 — built around the way Indian families actually clean.
               </p>

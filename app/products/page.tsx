@@ -74,7 +74,7 @@ export default async function ProductsPage() {
             One trusted brand.
           </>
         }
-        subtitle="From a ₹10 sachet to a 4kg mega pack with a free drum, Wasro covers every Indian household need — with a free gift in every family pack."
+        subtitle="From a ₹10 sachet to a 4kg mega pack with a free basket or drum, Wasro covers every Indian household need — with a free gift in every family pack."
       />
 
       {/* Visual category doorways */}

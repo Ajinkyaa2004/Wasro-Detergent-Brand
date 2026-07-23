@@ -23,7 +23,7 @@ export const DEFAULT_FAQS: FaqEntry[] = [
   },
   {
     q: "Are the free gifts really included?",
-    a: "Yes — every Wasro detergent pack ships with a real, useful gift. The 500g pack comes with a free mug; the 2kg pack with a free bucket or tub; the 3kg pack with a free drum or big tub; and the 4kg jumbo pack with a free 40-litre drum. Dishwash tubs include a free scrubber. Gifts are subject to availability and may vary by region and stock.",
+    a: "Yes — every Wasro detergent pack ships with a real, useful gift. The 500g pack comes with a free mug; the 2kg pack with a free bucket or tub; the 3kg pack with a free drum or big tub; and the 4kg jumbo pack with a free 40-litre drum or big basket. Dishwash tubs include a free scrubber. Gifts are subject to availability and may vary by region and stock.",
   },
   {
     q: "Do you offer bulk discounts for shops and institutions?",

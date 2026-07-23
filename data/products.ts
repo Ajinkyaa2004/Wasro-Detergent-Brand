@@ -140,9 +140,9 @@ export const PRODUCTS: Product[] = [
     category: "detergent-powder",
     size: "4kg",
     mrp: 600,
-    offer: "FREE 40L Drum",
+    offer: "FREE Drum or Basket",
     description:
-      "4kg jumbo pack ships with a free 40-litre drum. Wash, store, save — the biggest Wasro pack.",
+      "4kg jumbo pack ships with a free 40-litre drum or big basket. Wash, store, save — the biggest Wasro pack.",
     image: "/products/powder-4kg.webp",
     featured: true,
   },

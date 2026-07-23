@@ -65,10 +65,10 @@ const SIZES: PackSize[] = [
     name: "Jumbo Packs",
     tagline: "Best price-per-wash",
     pitch:
-      "2kg, 3kg & 4kg mega packs — built for big families, joint households, and small businesses. The 4kg ships with a FREE 40-litre drum.",
+      "2kg, 3kg & 4kg mega packs — built for big families, joint households, and small businesses. The 4kg ships with a FREE 40-litre drum or big basket.",
     image: "/products/powder-4kg.webp",
     startsAt: "₹280",
-    giftLabel: "Free drum with 4kg",
+    giftLabel: "Free drum or basket with 4kg",
     anchor: "/products#detergent-powder",
     accent: {
       from: "from-rose-500",
