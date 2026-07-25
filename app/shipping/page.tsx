@@ -6,7 +6,7 @@ import { JsonLd, buildMetadata, breadcrumbLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Shipping & Delivery Policy",
   description:
-    "How Wasro detergent packs reach you — through 121+ kirana partner stores, quick-commerce platforms, and direct bulk dispatch from our Amingaon (Assam) plant.",
+    "How Wasro detergent packs reach you — through 150+ kirana partner stores, quick-commerce platforms, and direct bulk dispatch from our Amingaon (Assam) plant.",
   path: "/shipping",
 });
 
@@ -42,7 +42,7 @@ export default function ShippingPage() {
         <h2 className="mt-8 text-xl font-bold">Where can I buy Wasro?</h2>
         <ul className="list-disc space-y-2 pl-6">
           <li>
-            <strong>121+ partner kirana stores</strong> across Assam,
+            <strong>150+ partner kirana stores</strong> across Assam,
             Meghalaya, Manipur, Tripura, Mizoram, Nagaland, Arunachal Pradesh,
             West Bengal, Bihar, and Odisha. Ask your local grocer for Wasro.
           </li>

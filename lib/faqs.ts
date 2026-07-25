@@ -19,7 +19,7 @@ export const MAX_ANSWER_LEN = 1500;
 export const DEFAULT_FAQS: FaqEntry[] = [
   {
     q: "Where can I buy Wasro?",
-    a: "Across 121+ retail stores in Assam, Meghalaya, Manipur, Tripura, Mizoram, Nagaland, Arunachal Pradesh, West Bengal, Bihar, and Odisha. Ask your local grocer for Wasro, or send us a bulk enquiry to stock it.",
+    a: "Across 150+ retail stores in Assam, Meghalaya, Manipur, Tripura, Mizoram, Nagaland, Arunachal Pradesh, West Bengal, Bihar, and Odisha. Ask your local grocer for Wasro, or send us a bulk enquiry to stock it.",
   },
   {
     q: "Are the free gifts really included?",

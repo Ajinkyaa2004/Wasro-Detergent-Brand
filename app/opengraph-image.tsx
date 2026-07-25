@@ -146,7 +146,7 @@ export default async function OpengraphImage() {
           }}
         >
           <div style={{ display: "flex", gap: 40 }}>
-            <Stat value="121+" label="Stores across NE India" />
+            <Stat value="150+" label="Stores across India" />
             <Stat value="14" label="SKUs · 4 categories" />
             <Stat value="₹5" label="Starting price" />
           </div>

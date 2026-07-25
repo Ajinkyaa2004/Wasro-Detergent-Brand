@@ -35,7 +35,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = buildMetadata({
   title: `${SITE.brand} — ${SITE.tagline}`,
   description:
-    "Wasro detergent powders, dishwash bars & clothwash bars by Madhav Industries — made in Assam, at 121+ stores. Value packs from ₹5, free gifts in jumbo packs.",
+    "Wasro detergent powders, dishwash bars & clothwash bars by Madhav Industries — made in Assam, at 150+ stores. Value packs from ₹5, free gifts in jumbo packs.",
   path: "/",
   keywords: [
     "detergent powder online India",

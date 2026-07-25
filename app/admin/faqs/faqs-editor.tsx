@@ -153,7 +153,7 @@ export function FaqsEditor({ initial }: { initial: FaqEntry[] }) {
                   value={faq.a}
                   onChange={(v) => update(i, { a: v })}
                   maxLength={MAX_ANSWER_LEN}
-                  placeholder="Across 121+ retail stores in Assam, Meghalaya…"
+                  placeholder="Across 150+ retail stores in Assam, Meghalaya…"
                   multiline
                   rows={4}
                 />

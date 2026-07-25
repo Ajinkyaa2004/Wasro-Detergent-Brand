@@ -129,7 +129,7 @@ const BUYER_TYPES = [
 ];
 
 const STATS = [
-  { value: 121, suffix: "+", label: "Stores served" },
+  { value: 150, suffix: "+", label: "Stores served" },
   { value: 14, label: "SKUs across 4 ranges" },
   { value: 10, label: "States covered" },
   { value: 1, label: "Working-day response" },

@@ -48,9 +48,9 @@ export const DEFAULT_HERO_CONTENT: HeroContent = {
   primaryCta: { label: "Shop the range", href: "/products" },
   secondaryCta: { label: "Bulk orders", href: "/bulk-orders" },
   stats: [
-    { value: 121, suffix: "+", label: "Stores across NE India" },
+    { value: 150, suffix: "+", label: "Stores across India" },
     { value: 14, label: "SKUs across 4 categories" },
-    { value: 10, prefix: "₹", label: "Starting price" },
+    { value: 5, prefix: "₹", label: "Starting price" },
   ],
   madeInAssamChip: "Made in Assam",
 };

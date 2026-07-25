@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.brand}`,
   },
   description:
-    "Wasro detergent powders, dishwash bars, and clothwash bars by Madhav Industries — manufactured in Assam, trusted at 121+ stores across Northeast India. Free gift in every family pack. Available on Swiggy Instamart, Blinkit, BigBasket, JioMart & Flipkart.",
+    "Wasro detergent powders, dishwash bars, and clothwash bars by Madhav Industries — manufactured in Assam, trusted at 150+ stores across India. Free gift in every family pack. Available on Swiggy Instamart, Blinkit, BigBasket, JioMart & Flipkart.",
   applicationName: SITE.brand,
   generator: "Next.js",
   referrer: "origin-when-cross-origin",

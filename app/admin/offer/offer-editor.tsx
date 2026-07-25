@@ -286,7 +286,7 @@ function SlideForm({
         value={slide.subtitle ?? ""}
         onChange={(v) => onChange({ subtitle: v })}
         maxLength={200}
-        placeholder="Valid across all 121+ stores this month."
+        placeholder="Valid across all 150+ stores this month."
         multiline
       />
 

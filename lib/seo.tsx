@@ -164,7 +164,7 @@ export function organizationLd(): JsonLd {
     foundingDate: SITE.foundingDate,
     slogan: SITE.tagline,
     description:
-      "Wasro is an Indian detergent brand by Madhav Industries — manufactured in Assam, available across 121+ stores in Northeast India and beyond.",
+      "Wasro is an Indian detergent brand by Madhav Industries — manufactured in Assam, available across 150+ stores in India.",
     // Categories the brand is recognised for — feeds Google's
     // "About this result" knowledge cards.
     knowsAbout: [

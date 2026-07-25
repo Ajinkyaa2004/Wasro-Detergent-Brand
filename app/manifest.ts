@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${SITE.brand} — ${SITE.tagline}`,
     short_name: SITE.brand,
     description:
-      "Wasro detergent powders, dishwash bars, and clothwash bars by Madhav Industries — made in Assam, available at 121+ stores across Northeast India.",
+      "Wasro detergent powders, dishwash bars, and clothwash bars by Madhav Industries — made in Assam, available at 150+ stores across India.",
     start_url: "/",
     display: "standalone",
     background_color: "#FFFFFF",

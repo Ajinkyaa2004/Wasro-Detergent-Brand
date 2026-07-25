@@ -316,7 +316,7 @@ function StatRow({
             onChange({ value: Number(v.replace(/[^0-9]/g, "")) || 0 })
           }
           maxLength={9}
-          placeholder="121"
+          placeholder="150"
           type="number"
         />
         <Field
@@ -333,7 +333,7 @@ function StatRow({
           value={value.label}
           onChange={(v) => onChange({ label: v })}
           maxLength={60}
-          placeholder="Stores across NE India"
+          placeholder="Stores across India"
         />
       </div>
     </div>

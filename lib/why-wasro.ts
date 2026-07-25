@@ -91,7 +91,7 @@ export const DEFAULT_WHY_WASRO: WhyWasro = {
     {
       icon: "MapPin",
       theme: "coral",
-      title: "Available at 121+ stores",
+      title: "Available at 150+ stores",
       body: "Distributed across Assam, Meghalaya, Manipur, Tripura, Mizoram, Nagaland, Arunachal Pradesh, West Bengal, Bihar & Odisha.",
       stat: "10",
       statLabel: "states",
