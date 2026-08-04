@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, ShieldCheck, Gift, Factory, Sparkles, Award } from "lucide-react";
+import { MapPin, ShieldCheck, Gift, Factory, Sparkles, Award, Users } from "lucide-react";
 import { SITE, cn } from "@/lib/utils";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/ui/reveal";
@@ -343,6 +343,95 @@ export default async function AboutPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Wasro First Sales Meet — company milestone gallery.
+          Dark 'lookbook' section so the event photos pop and it reads as a
+          distinct moment between the cream Quality Promise and white product
+          showcase. Bento mirrors the Madhav manufacturing grid: one landscape
+          hero, one tall portrait (the venue signboard), two supporting shots. */}
+      <section
+        id="sales-meet"
+        className="relative scroll-mt-20 overflow-hidden bg-wasro-charcoal text-wasro-cream"
+      >
+        <BubbleField count={5} seed={37} tone="light" className="opacity-[0.07]" />
+        <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8">
+          {/* Header */}
+          <Reveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-pill bg-wasro-yellow/95 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-wasro-charcoal shadow-lg">
+                <Users size={12} /> Milestone
+              </span>
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+                Wasro&apos;s first Sales Meet
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-wasro-cream/75">
+                Our team came together for Wasro&apos;s very first Sales Meet —
+                a day of planning, product training, and celebration as we set
+                the road ahead for the brand across the Northeast and beyond.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* 4-image bento.
+              Mobile (cols=2): hero full-width, signboard + meeting1 side by
+              side, meeting2 full-width. Desktop (cols=4 × rows=2): hero as a
+              2x2 block, signboard as a tall 1x2, meeting1 / meeting2 stacked. */}
+          <Reveal delay={0.15}>
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:grid-rows-2 md:aspect-[2/1]">
+              {/* Hero — cake cutting */}
+              <div className="group relative col-span-2 aspect-[16/10] overflow-hidden rounded-card shadow-xl ring-1 ring-white/10 md:col-span-2 md:row-span-2 md:aspect-auto">
+                <Image
+                  src="/sales-meet/cake-cutting.webp"
+                  alt="Team Wasro cutting a celebration cake at the brand's first Sales Meet"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-wasro-charcoal/85 to-transparent"
+                />
+                <p className="absolute inset-x-4 bottom-4 text-sm font-semibold text-wasro-cream drop-shadow">
+                  Cutting the cake — Team Wasro celebrates the first Sales Meet
+                </p>
+              </div>
+
+              {/* Signboard — tall portrait */}
+              <div className="group relative col-span-1 aspect-square overflow-hidden rounded-card shadow-lg ring-1 ring-white/10 md:col-span-1 md:row-span-2 md:aspect-auto">
+                <Image
+                  src="/sales-meet/signboard.webp"
+                  alt="'Wasro Sales Meet @ Topaz' signboard at the venue entrance"
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover object-center transition duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Meeting 1 */}
+              <div className="group relative col-span-1 aspect-square overflow-hidden rounded-card shadow-lg ring-1 ring-white/10 md:col-span-1 md:aspect-auto">
+                <Image
+                  src="/sales-meet/meeting-1.webp"
+                  alt="Wasro team in a working session at the Sales Meet"
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Meeting 2 */}
+              <div className="group relative col-span-2 aspect-[16/10] overflow-hidden rounded-card shadow-lg ring-1 ring-white/10 md:col-span-1 md:aspect-auto">
+                <Image
+                  src="/sales-meet/meeting-2.webp"
+                  alt="Wasro team and partners discussing plans around the conference table"
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
